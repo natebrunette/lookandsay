@@ -1,0 +1,20 @@
+{
+    "name": "tebru/look-and-say",
+    "description": "Look and Say in PHP",
+    "require": {
+        "php": ">= 7",
+        "symfony/console": "^3.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nate Brunette",
+            "email": "n@tebru.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Tebru\\LookAndSay\\": "src/"
+        }
+    }
+}

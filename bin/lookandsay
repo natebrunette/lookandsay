@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+
+<?php
+//declare(strict_types=1);
+
+
+use Tebru\LookAndSay\LookAndSayApplication;
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$application = new LookAndSayApplication('LookAndSay', '@package_version@');
+$application->run();
