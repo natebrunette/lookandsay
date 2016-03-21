@@ -59,11 +59,10 @@ class RunCommand extends Command
         $starting = (string) $input->getOption(self::STARTING) ?: self::DEFAULT_STARTING;
         $iterations = (int) $input->getOption(self::ITERATIONS) ?: self::DEFAULT_ITERATIONS;
 
-        // move up one line
-        $output->write("\033[A");
-
-        // set text to green
-        $output->write("\033[32m");
+        if ($debug) {
+            // set text to green
+            $output->write("\033[32m");
+        }
 
         $progress = new ProgressBar($output, $iterations);
         $sayer = new Sayer($output, $progress);
@@ -72,8 +71,10 @@ class RunCommand extends Command
         $string = $sayer->say($starting, $iterations, $debug);
         $end = microtime(true);
 
-        // set text to white
-        $output->write("\033[0m");
+        if ($debug) {
+            // set text to white
+            $output->write("\033[0m");
+        }
 
         if ($displayString) {
             $output->write($string, true);
